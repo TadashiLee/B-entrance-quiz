@@ -22,7 +22,10 @@ public class ClassroomController {
         return ResponseEntity.ok(classroomService.getAllStudents());
     }
 
+    // TODO GTB-知识点: - 违反Restful实践, url不合理
     @PostMapping("/student")
+    // TODO GTB-知识点: - 没有使用泛型
+    // TODO GTB-知识点: - 违反Restful实践, Post请求成功后应该返回201
     public ResponseEntity addStudent(@RequestBody Student student){
         classroomService.addStudent(student);
         return ResponseEntity.ok().build();
